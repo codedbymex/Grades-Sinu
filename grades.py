@@ -5,7 +5,7 @@ base_url = "https://sinu.utcluj.ro/Note_up/"
 
 UTILIZATOR = "UTILIZATOR"
 PAROLA = "PAROLA"
-ngrades = "n" #number of grades + 1
+
 
 
 payload1 = {'hidSelfSubmit':'default.asp',
@@ -23,7 +23,7 @@ soup = BeautifulSoup(r1.content, "lxml")
 table = soup.find("table", { "class" : "table" })
 
 def noteall():
-    for row in table.findAll("tr")[1:ngrades]:
+    for row in table.findAll("tr")[1:10]:
         cells = row.findAll("td")
         if len(cells) > 4:
             note = "\n" + cells[0].text + cells[3].text
