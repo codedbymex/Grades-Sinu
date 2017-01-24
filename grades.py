@@ -16,7 +16,7 @@ payload1 = {'hidSelfSubmit':'default.asp',
             'txtParola':'PAROLA'}
 
 session = requests.session()
-r1 = session.post(url + "default.asp", data=payload1) #1
+r1 = session.post(base_url + "default.asp", data=payload1) #1
 
 soup = BeautifulSoup(r1.content, "lxml")
 
