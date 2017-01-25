@@ -10,10 +10,10 @@ ngrades = 10              #Number of grades +1 here
 
 payload1 = {'hidSelfSubmit':'default.asp',
             'hidOperation': 'N',  
-            'hidUtilizator': 'UTILIZATOR',
-            'hidParola': 'PAROLA',
-            'txtNume': 'UTILIZATOR',
-            'txtParola':'PAROLA'}
+            'hidUtilizator': UTILIZATOR,
+            'hidParola': PAROLA,
+            'txtNume': UTILIZATOR,
+            'txtParola':PAROLA}
 
 session = requests.session()
 r1 = session.post(base_url + "default.asp", data=payload1) #1
