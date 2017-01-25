@@ -22,13 +22,11 @@ soup = BeautifulSoup(r1.content, "lxml")
 
 table = soup.find("table", { "class" : "table" })
 
-def noteall():
-    for row in table.findAll("tr")[1:ngrades]:
-        cells = row.findAll("td")
-        if len(cells) > 4:
-            note = "\n" + cells[0].text + cells[3].text
-            print note
-        else:
-            return None
+for row in table.findAll("tr")[1:ngrades]:
+    cells = row.findAll("td")
+    if len(cells) > 4:
+        note = "\n" + cells[0].text + cells[3].text
+        print note
+        
 
 
