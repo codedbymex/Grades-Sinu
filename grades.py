@@ -5,7 +5,7 @@ base_url = "https://sinu.utcluj.ro/Note_up/"
 
 UTILIZATOR = "UTILIZATOR" #Username here
 PAROLA = "PAROLA"         #Password here
-ngrades = 10              #Number of grades here
+ngrades = 10              #Number of grades +1 here
 
 
 payload1 = {'hidSelfSubmit':'default.asp',
