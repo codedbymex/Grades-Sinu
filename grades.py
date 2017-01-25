@@ -3,9 +3,9 @@ import requests
 
 base_url = "https://sinu.utcluj.ro/Note_up/"
 
-UTILIZATOR = "UTILIZATOR" #Username here
-PAROLA = "PAROLA"         #Password here
-ngrades = 10              #Number of grades +1 here
+UTILIZATOR = "UTILIZATOR" # Username here
+PAROLA = "PAROLA"         # Password here
+ngrades = 10              # Number of grades +1 here
 
 
 payload1 = {'hidSelfSubmit':'default.asp',
@@ -16,7 +16,7 @@ payload1 = {'hidSelfSubmit':'default.asp',
             'txtParola':PAROLA}
 
 session = requests.session()
-r1 = session.post(base_url + "default.asp", data=payload1) #1
+r1 = session.post(base_url + "default.asp", data=payload1) # 1
 
 soup = BeautifulSoup(r1.content, "lxml")
 
