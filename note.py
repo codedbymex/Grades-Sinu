@@ -18,8 +18,8 @@ payload = {'hidSelfSubmit':'default.asp',
 r1 = requests.session().post(base_url + "default.asp", data=payload) 
 soup = BeautifulSoup(r1.content, "lxml")
 table = soup.find('table', attrs={'class':'table'})
-
 rows = table.find_all('tr')
+
 for row in rows:
     cols = row.find_all('td')
     cols = [ele.text.strip() for ele in cols]
