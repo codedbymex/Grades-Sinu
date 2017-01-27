@@ -16,9 +16,7 @@ payload = {'hidSelfSubmit':'default.asp',
             'txtParola':PAROLA}
 
 r1 = requests.session().post(base_url + "default.asp", data=payload) 
-
 soup = BeautifulSoup(r1.content, "lxml")
-
 table = soup.find('table', attrs={'class':'table'})
 
 rows = table.find_all('tr')
