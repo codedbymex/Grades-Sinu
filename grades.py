@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-import requests
+import tabulate, requests
 
 base_url = "https://sinu.utcluj.ro/Note_up/"
 
