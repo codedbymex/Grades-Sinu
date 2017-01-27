@@ -7,18 +7,16 @@ UTILIZATOR = "UTILIZATOR" # Username here
 PAROLA = "PAROLA"         # Password here
 ngrades = 10              # Number of grades +1 here
 
-
-payload1 = {'hidSelfSubmit':'default.asp',
+payload = {'hidSelfSubmit':'default.asp',
             'hidOperation': 'N',  
             'hidUtilizator': UTILIZATOR,
             'hidParola': PAROLA,
             'txtNume': UTILIZATOR,
             'txtParola':PAROLA}
 
-session = requests.session()
-r1 = session.post(base_url + "default.asp", data=payload1) # 1
+r = requests.session().post(base_url + "default.asp", data=payload) 
 
-soup = BeautifulSoup(r1.content, "lxml")
+soup = BeautifulSoup(r.content, "lxml")
 
 table = soup.find("table", { "class" : "table" })
 
