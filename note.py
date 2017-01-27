@@ -26,4 +26,3 @@ for row in rows:
     data.append([ele for ele in cols if ele])
      
 print tabulate(data, tablefmt="grid")
-
