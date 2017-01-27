@@ -6,6 +6,7 @@ base_url = "https://sinu.utcluj.ro/Note_up/"
 UTILIZATOR = "UTILIZATOR" # Username here
 PAROLA = "PAROLA"         # Password here
 ngrades = 10              # Number of grades +1 here
+data = []
 
 payload = {'hidSelfSubmit':'default.asp',
             'hidOperation': 'N',  
@@ -14,15 +15,18 @@ payload = {'hidSelfSubmit':'default.asp',
             'txtNume': UTILIZATOR,
             'txtParola':PAROLA}
 
-r = requests.session().post(base_url + "default.asp", data=payload) 
-soup = BeautifulSoup(r.content, "lxml")
-table = soup.find("table", { "class" : "table" })
+r1 = requests.session().post(base_url + "default.asp", data=payload) 
 
-for row in table.findAll("tr")[1:ngrades]:
-    cells = row.findAll("td")
-    if len(cells) > 4:
-        note = "\n" + cells[0].text + cells[3].text
-        print note
-        
+soup = BeautifulSoup(r1.content, "lxml")
 
+table = soup.find('table', attrs={'class':'table'})
+
+rows = table.find_all('tr')[1:ngrades]
+for row in rows:
+    cols = row.find_all('td')
+    cols = [ele.text.strip() for ele in cols]
+    data.append([ele for ele in cols if ele])
+       
+headers = ["Disciplina", "An", "Semestru", "Nota", "Data"]
+print tabulate(data, headers=headers, tablefmt="grid")
 
