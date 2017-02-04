@@ -3,10 +3,11 @@ from tabulate import tabulate
 import requests
 
 base_url = "https://sinu.utcluj.ro/Note_up/"
+data = []
 
 UTILIZATOR = "UTILIZATOR" # Username here
 PAROLA = "PAROLA"         # Password here
-data = []
+
 
 payload = {'hidSelfSubmit':'default.asp',
             'hidOperation': 'N',  
