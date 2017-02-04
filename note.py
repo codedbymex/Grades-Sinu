@@ -8,7 +8,6 @@ data = []
 UTILIZATOR = "UTILIZATOR" # Username here
 PAROLA = "PAROLA"         # Password here
 
-
 payload = {'hidSelfSubmit':'default.asp',
             'hidOperation': 'N',  
             'hidUtilizator': UTILIZATOR,
