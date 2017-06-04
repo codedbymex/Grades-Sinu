@@ -2,21 +2,22 @@ from bs4 import BeautifulSoup
 from tabulate import tabulate
 import requests
 
-base_url = "https://sinu.utcluj.ro/Note_up/"
+base_url = "https://sinu.utcluj.ro/Note_up/default.asp"
 data = []
 
 UTILIZATOR = "UTILIZATOR" # Username here
 PAROLA = "PAROLA"         # Password here
 
 payload = {'hidSelfSubmit':'default.asp',
-            'hidOperation': 'N',  
-            'hidUtilizator': UTILIZATOR,
-            'hidParola': PAROLA,
-            'txtNume': UTILIZATOR,
-            'txtParola':PAROLA}
+           'hidOperation': 'N',  
+           'hidUtilizator': UTILIZATOR,
+           'hidParola': PAROLA,
+           'txtNume': UTILIZATOR,
+           'txtParola':PAROLA}
 
-r1 = requests.session().post(base_url + "default.asp", data=payload) 
-soup = BeautifulSoup(r1.content, "lxml")
+r = requests.session().post(base_url, data=payload) 
+soup = BeautifulSoup(r.content, "lxml")
+
 table = soup.find('table', attrs={'class':'table'})
 rows = table.find_all('tr')
 
