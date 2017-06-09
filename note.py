@@ -3,7 +3,6 @@ from tabulate import tabulate
 import requests
 
 base_url = "https://sinu.utcluj.ro/Note_up/default.asp"
-data = []
 
 UTILIZATOR = "UTILIZATOR" # Username here
 PAROLA = "PAROLA"         # Password here
