@@ -20,6 +20,7 @@ soup = BeautifulSoup(r.content, "lxml")
 
 table = soup.find('table', attrs={'class':'table'})
 rows = table.find_all('tr')
+data = []
 
 for row in rows:
     cols = row.find_all('td')
