@@ -7,12 +7,14 @@ base_url = "https://sinu.utcluj.ro/Note_up/default.asp"
 UTILIZATOR = "UTILIZATOR" # Username here
 PAROLA = "PAROLA"         # Password here
 
-payload = {'hidSelfSubmit':'default.asp',
+payload = {
+           'hidSelfSubmit':'default.asp',
            'hidOperation': 'N',  
            'hidUtilizator': UTILIZATOR,
            'hidParola': PAROLA,
            'txtNume': UTILIZATOR,
-           'txtParola':PAROLA}
+           'txtParola':PAROLA
+}
 
 r = requests.session().post(base_url, data=payload) 
 soup = BeautifulSoup(r.content, "lxml")
