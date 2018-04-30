@@ -28,4 +28,4 @@ for row in rows:
     cols = [ele.text.strip() for ele in cols]
     data.append([ele for ele in cols if ele])
      
-print tabulate(data, tablefmt="grid")
+print(tabulate(data, tablefmt="grid"))
