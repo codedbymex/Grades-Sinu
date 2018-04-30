@@ -16,7 +16,7 @@ payload = {
            'txtParola':PAROLA
 }
 
-r = requests.session().post(base_url, data=payload) 
+r = requests.post(base_url, data=payload) 
 soup = BeautifulSoup(r.content, "lxml")
 
 table = soup.find('table', attrs={'class':'table'})
